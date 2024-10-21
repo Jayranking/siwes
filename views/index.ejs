@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SIWES App</title>
+    <%- include('./snippets/header.ejs') %>
+  </head>
+  <body>
+    <%- include('./snippets/navbar.ejs') %>
+
+
+    <div class="banner">
+    </div>
+
+    <div class="container section">
+      <h2 class="text-center fw-bold text-danger">About SIWES</h2>
+      <p class="text-center">
+        SIWES (Student Industrial Work Experience Scheme) is designed to help
+        students gain practical experience in their field of study. Explore,
+        login, and make the most of your industrial training with the app.
+      </p>
+    </div>
+
+    <div class="container my-5">
+      <div class="row">
+          <div class="col-md-4 mb-2">
+              <img src="./images/siwes.jfif" class="img-fluid" alt="SIWES Students">
+          </div>
+          <div class="col-md-8">
+              <h3 class="text-danger">Our Vision</h3>
+              <p>
+                  Our vision is to provide SIWES students with an exceptional experience, combining academic knowledge 
+                  with practical skills. We aim to bridge the gap between theoretical education and the professional 
+                  world, ensuring that our students are well-prepared for the challenges of their future careers. 
+                  Through our programs, we aspire to cultivate a generation of innovative, responsible, and skilled 
+                  professionals who will contribute meaningfully to the growth and development of society.
+              </p>
+          </div>
+      </div>
+  </div>
+
+    <div class="container section">
+      <h2 class="text-center fw-bold text-danger">Steps</h2>
+      <div class="row">
+        <div class="col-md-4 shadow">
+          <h4 class="fw-bold">1</h4>
+          <p>Login with your Matric number</p>
+        </div>
+        <div class="col-md-4 shadow">
+          <h4 class="fw-bold">2</h4>
+          <p>Submit your daily work experience</p>
+        </div>
+        <div class="col-md-4 shadow">
+          <h4 class="fw-bold">3</h4>
+          <p>Check for approval</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2024 SIWES App. All rights reserved.</p>
+    </footer>
+
+    <%- include('./snippets/scripts.ejs') %>
+  </body>
+</html>

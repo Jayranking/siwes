@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dashboard</title>
+  <%- include('./snippets/dashboardHeader.ejs') %>
+</head>
+<body>
+    <%- include('./snippets/dashboardNavbar.ejs') %>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <%- include('./snippets/dashboardSidebar.ejs') %>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+         
+          <div class="container my-5">
+            <div class="mt-2">
+                <h5 class="text-center">Activities</h5>
+                <div class="card p-4 shadow">
+                    <canvas id="enrollmentGraph" width="700" height="200"></canvas>
+                </div>
+            </div>
+          </div>
+  
+        </main>
+      </div>
+    </div>
+
+     <!-- Chart.js (for the graph) -->
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script>
+         // Sample data for the graph
+         const ctx = document.getElementById('enrollmentGraph').getContext('2d');
+         const enrollmentGraph = new Chart(ctx, {
+             type: 'bar', // You can change this to 'line', 'pie', etc.
+             data: {
+                 labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursay', 'Friday'],
+                 datasets: [{
+                     label: 'Active days',
+                     data: [10, 20, 30, 40, 50],
+                     backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                     borderColor: 'rgba(54, 162, 235, 1)',
+                     borderWidth: 1
+                 }]
+             },
+             options: {
+                 scales: {
+                     y: {
+                         beginAtZero: true
+                     }
+                 }
+             }
+         });
+     </script>
+    <%- include('./snippets/dashboardScripts.ejs') %>
+</body>
+</html>

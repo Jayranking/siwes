@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>School General Cordinator</title>
+    <%- include('./snippets/header.ejs') %>
+</head>
+<body>
+    <div class="container login-container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <h3 class="text-center fw-bold">Login</h3>
+                    <form id="loginForm">
+                        <div class="form-group mb-4">
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
+                            <div class="emailErr text-danger text-center"></div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                            <div class="passwordErr text-danger text-center"></div>
+                        </div>
+                        <button type="submit" class="btn btn-danger w-100">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <script src="js/schGenCordLogin.js"></script>
+    <%- include('./snippets/scripts.ejs') %>
+</body>
+</html>

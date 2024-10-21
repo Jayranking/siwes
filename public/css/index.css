@@ -1,0 +1,38 @@
+body {
+  background-color: #f8f9fa;
+  padding-top: 56px;
+  font-family: "Poppins", Arial, sans-serif !important;
+}
+.navbar {
+  background-color: #f8f9fa;
+}
+.navbar-brand,
+.nav-link {
+  color: #fff;
+}
+.banner {
+  background: url("../images/SIWES.png") no-repeat center center;
+  background-size: contain;
+  color: #cf1111;
+  padding: 150px 0;
+  text-align: center;
+  background-color: rgb(237, 237, 237);
+}
+.section {
+  padding: 20px 0;
+}
+.footer {
+  background-color: #cf1111;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+.register-container {
+  margin-top: 50px;
+}
+.card {
+  padding: 20px;
+}
+.login-container {
+  margin-top: 100px;
+}

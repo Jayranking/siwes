@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Register Department Cordinator</title>
+  <%- include('./snippets/dashboardHeader.ejs') %>
+</head>
+<body>
+    <%- include('./snippets/dashboardNavbar.ejs') %>
+
+    <div class="container-fluid">
+      <div class="row">
+        <%- include('./snippets/dashboardSidebar.ejs') %>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="container">
+                <div class="text-center mt-5">
+                    <h4 class="text-primary fw-bold">Register Department Cordinator</h4>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card p-4 shadow">
+                            <form id="registerForm">
+                                <div class="mb-3">
+                                    <input type="text" name="fullname" class="form-control" placeholder="Enter full name">
+                                    <div class="fullnameError text-danger text-center"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <select name="faculty" class="form-select">
+                                            <option value="" selected>Faculty</option>
+                                            <option value="Social Science">Social Science</option>
+                                            <option value="Physical Science">Physical Science</option>
+                                            <option value="Humanities">Humanities</option>
+                                            <option value="Engineering">Engineering</option>
+                                            <option value="Education">Education</option>
+                                        </select>
+                                        <div class="facultyErr text-danger text-center"></div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <select name="dept" class="form-select">
+                                            <option value="" selected>Department</option>
+                                            <option value="Computer Science">Computer Science</option>
+                                            <option value="Civil Engineering">Civil Engineering</option>
+                                            <option value="Political Science">Political Science</option>
+                                            <option value="Physical and Health Education">Physical and Health Education</option>
+                                        </select>
+                                        <div class="deptErr text-danger text-center"></div>
+                                    </div>
+                                </div>                                
+                                <div class="mb-3">
+                                    <input type="email" name="email" class="form-control" placeholder="Enter email">
+                                    <div class="emailErr text-danger text-center"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" name="phone_no" class="form-control"  placeholder="Phone number">
+                                    <div class="phone_noErr text-danger text-center"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" name="schReg_no" class="form-control"  placeholder="School RegNo">
+                                        <div class="schReg_noErr text-danger text-center"></div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <select name="gender" class="form-select">
+                                            <option value="" selected>Gender</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                        <div class="genderErr text-danger text-center"></div>
+                                    </div>
+                                </div> 
+                                <button type="submit" class="btn btn-outline-primary w-100">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+      </div>
+    </div>
+
+    <script src="js/registerDeptCord.js"></script>
+    <%- include('./snippets/dashboardScripts.ejs') %>
+</body>
+</html>
+

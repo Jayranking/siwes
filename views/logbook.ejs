@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Logbook</title>
+  <%- include('./snippets/dashboardHeader.ejs') %>
+</head>
+<body>
+    <%- include('./snippets/dashboardNavbar.ejs') %>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <%- include('./snippets/dashboardSidebar.ejs') %>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="container">
+                <div class="text-center mt-5">
+                    <h4 class="text-primary fw-bold">SIWES Weekly Forms</h4>
+                    <h6 class="text-danger fs-6 display-1">Note: Once the week report is submitted you can't resubmit again.
+                      Kindly be sure of your write-up before submitting!
+                    </h6>
+                </div>
+            </div>
+            
+            <div class="container mt-3">
+              
+              <!-- Week Buttons -->
+              <div class="row">
+                <div class="col-12 text-center">
+                  <!-- Loop for weeks 1-24 -->
+                  <div class="d-flex flex-wrap justify-content-center">
+                    <!-- Week Buttons  -->
+                    <% for(let i=1; i<=24; i++){ %>
+                    <button
+                      type="button"
+                      class="btn btn-outline-primary m-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#weekModal"
+                      data-week="<%= i %>"
+                      onclick="populateModal(<%=i%>)"
+                    >
+                      Week <%= i %>
+                    </button>
+                    <% } %>
+                  </div>
+                </div>
+              </div>
+            
+              <!-- Modal for Week Forms -->
+              <div
+                class="modal fade"
+                id="weekModal"
+                tabindex="-1"
+                aria-labelledby="weekModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="weekModalLabel">Weekly Activities</h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="weekForm" enctype="multipart/form-data">
+                        <input type="hidden" name="week" id="weekInput">
+                        <div class="mb-3">
+                          <textarea class="form-control" name="monday" rows="2" placeholder="Monday"></textarea>
+                          <div class="mondayErr text-center text-danger"></div>
+                        </div>
+                        <div class="mb-3">
+                          <textarea class="form-control" name="tuesday" rows="2" placeholder="Tuesday"></textarea>
+                          <div class="tuesdayErr text-center text-danger"></div>
+                        </div>
+                        <div class="mb-3">
+                          <textarea class="form-control" name="wednesday" rows="2" placeholder="Wednesday"></textarea>
+                          <div class="wednesdayErr text-center text-danger"></div>
+                        </div>
+                        <div class="mb-3">
+                          <textarea class="form-control" name="thursday" rows="2" placeholder="Thursday"></textarea>
+                          <div class="thursdayErr text-center text-danger"></div>
+                        </div>
+                        <div class="mb-1">
+                          <textarea class="form-control" name="friday" rows="2" placeholder="Friday"></textarea>
+                          <div class="fridayErr text-center text-danger"></div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="Image" class="form-label mt-2">Upload Diagram (Optional)</label>
+                          <input type="file" name="img" class="form-control" />
+                          <div class="imgErr text-center text-danger"></div>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Submit</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+        </main>
+      </div>
+    </div>
+
+
+    <%- include('./snippets/dashboardScripts.ejs') %>
+    <script>
+      function populateModal(week) {
+        document.getElementById("weekModalLabel").innerText = "Week " + week + " Activities";
+        document.getElementById("weekInput").value = week;
+      }
+    </script>
+    <script src="/js/siwesForm.js"></script>
+</body>
+</html>

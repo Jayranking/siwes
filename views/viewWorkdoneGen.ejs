@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Students work</title>
+  <%- include('./snippets/dashboardHeader.ejs') %>
+</head>
+<body>
+    <%- include('./snippets/dashboardNavbar.ejs') %>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <%- include('./snippets/dashboardSidebar.ejs') %>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="container">
+                <div class="text-center mt-5">
+                    <h4 class="text-primary fw-bold">Weekly activities by <%= logbooks[0].student.fullname %></h4>
+                </div>
+            </div>
+            <table id="example" class="table small table-sm table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Week</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% logbooks.forEach(logbook => { %>
+                        <tr>
+                            <td class="text-center"><%= logbook.week %></td>
+                            <td><%= logbook.monday %></td>
+                            <td><%= logbook.tuesday %></td>
+                            <td><%= logbook.wednesday %></td>
+                            <td><%= logbook.thursday %></td>
+                            <td><%= logbook.friday %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </main>
+      </div>
+    </div>
+
+
+    <%- include('./snippets/dashboardScripts.ejs') %>
+</body>
+</html>
